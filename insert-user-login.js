@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const User = require('./models/user');
-require('./database');
 
 async function addLoginForUser(email, newLogin) {
     try {
@@ -23,7 +22,7 @@ async function addLoginForUser(email, newLogin) {
 }
 
 // Example usage
-const email = 'john.doe@example.com';
+const email = 'john.doe@example2.com';
 const newLogin = {
     logedinAt: new Date(),
     ipv4: '192.168.1.2'
@@ -31,7 +30,7 @@ const newLogin = {
 
 // Call the function with the userData object
 (async () => {
-
+    require('./database');
     await addLoginForUser(email, newLogin);
     await mongoose.connection.close();
 
